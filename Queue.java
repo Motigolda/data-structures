@@ -44,4 +44,13 @@ public class Queue {
 		}
 		System.out.println();
 	}
+	public int getLength() {
+		int length = 0;
+		Node current = head;
+		while(current != null) {
+			length++;
+			current = current.getNext();
+		}
+		return length;
+	}
 }

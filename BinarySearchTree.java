@@ -41,14 +41,32 @@ public class BinarySearchTree {
 		if (this.root == null) return;
 		
 	}
-	public int[] getPreOrder() {
-		return new int[]{};
+	public void getPreOrder() {
+		getPreOrder(this.root);
 	}
-	public int[] getInOrder() {
-		return new int[]{};
+	private void getPreOrder(BinaryTreeNode btn) {
+		if (btn == null) return;
+		System.out.println(btn.getValue() + " ");
+		getPreOrder(btn.getLeftSon());
+		getPreOrder(btn.getRightSon());
 	}
-	public int[] getPostOrder() {
-		return new int[]{};
+	public void getInOrder() {
+		getInOrder(this.root);
+	}
+	private void getInOrder(BinaryTreeNode btn) {
+		if (btn == null) return;
+		getInOrder(btn.getLeftSon());
+		System.out.print(btn.getValue() + " ");
+		getInOrder(btn.getRightSon());
+	}
+	public void getPostOrder() {
+		getPostOrder(this.root);
+	}
+	private void getPostOrder(BinaryTreeNode btn) {
+		if (btn == null) return;
+		getPostOrder(btn.getLeftSon());
+		getPostOrder(btn.getRightSon());
+		System.out.println(btn.getValue() + " ");
 	}
 
 }

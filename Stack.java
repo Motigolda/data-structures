@@ -26,4 +26,13 @@ public class Stack {
 	public boolean isEmpty() {
 		return this.top == null;
 	}
+	public int getLength() {
+		int length = 0;
+		Node current = top;
+		while(current != null) {
+			length++;
+			current = current.getNext();
+		}
+		return length;
+	}
 }
